@@ -1,0 +1,10 @@
+﻿{
+  "compilerOptions": {
+    "allowJs": false,
+    "strict": true,
+    "jsx": "react-native",
+    "moduleResolution": "bundler",
+    "types": ["react", "react-native"]
+  },
+  "extends": "expo/tsconfig.base"
+}
