@@ -53,4 +53,4 @@ npm run dev
 
 - Frontend/API: Vercel
 - Banco: Supabase PostgreSQL ou Neon
-- Configure as variaveis `DATABASE_URL` e `JWT_SECRET`
+- Configure as variaveis `DATABASE_URL`, `DIRECT_URL` e `JWT_SECRET`
