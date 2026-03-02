@@ -3,3 +3,11 @@
 **/.expo
 **/dist
 **/.venv
+**/.env
+**/.env.*
+**/__pycache__
+**/*.pyc
+**/*.log
+**/coverage
+**/.DS_Store
+**/Thumbs.db
