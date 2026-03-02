@@ -163,7 +163,7 @@ export default function DashboardPage() {
                 />
                 <YAxis tick={{ fontSize: 12 }} />
                 <Tooltip
-                  formatter={(value: number) => [formatMoney(value), "Receita"]}
+                  formatter={(value: number | string | undefined) => formatMoney(Number(value ?? 0))}
                   labelFormatter={(value) => format(parseISO(String(value)), "dd/MM/yyyy")}
                 />
                 <Area type="monotone" dataKey="revenue" stroke="#0ea5e9" fill="url(#revenueGradient)" />
