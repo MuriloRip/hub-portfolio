@@ -4,6 +4,17 @@ import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
+type UpcomingAppointment = {
+  id: string;
+  title: string;
+  startAt: Date;
+  endAt: Date;
+  client: {
+    name: string;
+    phone: string;
+  };
+};
+
 export default async function DashboardPage() {
   const session = await getSession();
   if (!session) {
@@ -72,7 +83,7 @@ export default async function DashboardPage() {
           {upcomingAppointments.length === 0 ? (
             <p className="text-sm text-slate-600">Nenhum atendimento futuro encontrado.</p>
           ) : (
-            upcomingAppointments.map((appointment) => (
+            (upcomingAppointments as UpcomingAppointment[]).map((appointment) => (
               <article key={appointment.id} className="rounded-lg border border-slate-200 p-3">
                 <p className="text-sm font-semibold text-slateCustom">{appointment.title}</p>
                 <p className="text-sm text-slate-600">{appointment.client.name}</p>
